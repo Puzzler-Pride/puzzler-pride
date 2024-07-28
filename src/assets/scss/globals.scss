@@ -1,0 +1,28 @@
+// | -------------------------------------------------------------
+// | Globals
+// | -------------------------------------------------------------
+
+@use 'base/reset';
+@use 'base/root';
+@use 'base/font';
+@use 'base/list';
+@use 'base/container';
+@use 'base/breakpoint';
+@use 'base/button';
+@use 'base/color';
+@use 'base/outline';
+@use 'base/space-content';
+
+.text-gradient {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.darkmode .text-gradient {
+    background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

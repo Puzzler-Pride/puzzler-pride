@@ -1,0 +1,64 @@
+---
+import Navigation from '../components/Navigation.astro'
+import { SkipLinks } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import contentData from '../content.json'
+---
+
+<header>
+  <SkipLinks />
+  <Navigation>
+    <li class="menu-item">
+      <a href="/">Home</a>
+    </li>
+    <li class="menu-item">
+      <a href="/2024/">This Year</a>
+    </li>
+    <li class="menu-item has-dropdown">
+      <button aria-haspopup="true" aria-expanded="false">Archives</button>
+      <ul class="dropdown-menu">
+        {
+          Object.keys(contentData).map((year) => (
+            <li class="submenu-item">
+              <a href={`/${year}/`}>{year}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="/contribute">Contribute</a>
+    </li>
+    <!-- <li class="menu-item type-icon">
+      <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the GitHub page">
+        <Icon name="ion:logo-github" />
+      </a>
+    </li> -->
+  </Navigation>
+</header>
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/outline' as *;
+
+  header {
+    .type-icon a {
+      display: block;
+
+      [data-icon] {
+        height: auto;
+        margin-top: -4px;
+        width: 30px;
+
+        path {
+          fill: var(--action-color);
+        }
+      }
+
+      &:hover {
+        [data-icon] path {
+          fill: var(--action-color-state);
+        }
+      }
+    }
+  }
+</style>
