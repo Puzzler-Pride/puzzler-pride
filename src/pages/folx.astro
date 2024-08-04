@@ -6,21 +6,11 @@ import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
 ---
 
-<DefaultLayout title="Home">
+<DefaultLayout title="Puzzler Pride Folx">
   <Hero />
-  <!-- <section class="mb-32 mt-64">
+  <section class="my-64">
     <div class="container">
-      <h2 class="mb-16 text-6xl">2024 Stats</h2>
-      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3">
-        <Counter count="11" title="Authors" sub="Contributed" />
-        <Counter count="20" title="Puzzles" sub="Total" />
-        <Counter count="17" title="Genres" sub="Represented" />
-      </div>
-    </div>
-  </section> -->
-  <!-- <section class="my-64">
-    <div class="container">
-      <h2 class="mb-16 text-6xl">Features</h2>
+      <h2 class="mb-16 text-6xl">Contributors</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <Feature icon="mdi:tailwind" title="Tailwind CSS">
           Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.
@@ -68,5 +58,16 @@ import ContentMedia from '../components/ContentMedia.astro'
       navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
       reaching WCAG AA compliance.
     </p>
-  </ContentMedia> -->
+  </ContentMedia>
+  <section class="mb-32 mt-64">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Counters</h2>
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+        <Counter count="520" title="Stars" sub="On GitHub" />
+        <Counter count="17" title="Accessible" sub="Components" />
+        <Counter count="500" title="Commits" sub="Merged" />
+        <Counter count="18+" title="Months" sub="Since launch" />
+      </div>
+    </div>
+  </section>
 </DefaultLayout>

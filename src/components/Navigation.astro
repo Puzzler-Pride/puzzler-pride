@@ -32,12 +32,17 @@ import logo from '../assets/img/logo.svg'
   document.addEventListener('astro:page-load', () => {
     // variables
     const mainNav = document.querySelector('#main-navigation')
-    const mainMenu = mainNav.querySelector('ul')
+    const mainMenu = mainNav?.querySelector('ul')
     const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')]
 
     // functions
     const setActiveMenuItem = () => {
-      const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
+      const mobileDesktopMenus = mainNav?.querySelectorAll('nav > ul')
+
+      if (!mobileDesktopMenus || !mobileDesktopMenus.length) {
+        return;
+      }
+
       const currenPathname = window.location.pathname
 
       mobileDesktopMenus.forEach((menu) => {
@@ -56,8 +61,13 @@ import logo from '../assets/img/logo.svg'
     }
 
     const checkMenuSize = () => {
+      const desktopMenu = document.querySelector('.desktop-menu');
+      if (!mainNav || !desktopMenu) {
+        return;
+      }
+
       const mainNavWidth = mainNav.getBoundingClientRect().width
-      const desktopMenuWidth = document.querySelector('.desktop-menu').getBoundingClientRect().width
+      const desktopMenuWidth = desktopMenu.getBoundingClientRect().width
       const logoWidthBuffer = 300
       const totalMenuWidth = Math.round(desktopMenuWidth) + logoWidthBuffer
 
@@ -70,23 +80,29 @@ import logo from '../assets/img/logo.svg'
       }
     }
 
-    const isOutOfViewport = (element) => {
+    const isOutOfViewport = (element: Element) => {
       const elementBounds = element.getBoundingClientRect()
       return elementBounds.right > (window.innerWidth || document.documentElement.clientWidth)
     }
 
-    const openDropdownMenu = (dropdownMenu) => {
-      const dropdownList = dropdownMenu.parentNode.querySelector('ul')
+    const openDropdownMenu = (dropdownMenu: Element) => {
+      const dropdownParent = dropdownMenu.parentNode;
+
+      if (!dropdownParent) {
+        return;
+      }
 
       dropdownMenu.classList.add('show')
       dropdownMenu.setAttribute('aria-expanded', 'true')
+      
+      const dropdownList = dropdownParent.querySelector('ul')
 
-      if (isOutOfViewport(dropdownList)) {
+      if (dropdownList && isOutOfViewport(dropdownList)) {
         dropdownList.style.left = 'auto'
       }
     }
 
-    const closeDropdownMenu = (dropdownMenu) => {
+    const closeDropdownMenu = (dropdownMenu: Element) => {
       dropdownMenu.classList.remove('show')
       dropdownMenu.setAttribute('aria-expanded', 'false')
     }
@@ -97,12 +113,15 @@ import logo from '../assets/img/logo.svg'
       }
     }
 
-    const toggleDropdownMenu = (event) => {
-      if (event.target.getAttribute('aria-expanded') === 'false') {
-        closeAllDropdownMenus()
-        openDropdownMenu(event.target)
-      } else {
-        closeDropdownMenu(event.target)
+    const toggleDropdownMenu = (event: Event) => {
+      const eventTarget = event.target as Element;
+      if (eventTarget) {
+        if (eventTarget.getAttribute('aria-expanded') === 'false') {
+          closeAllDropdownMenus()
+          openDropdownMenu(eventTarget)
+        } else {
+          closeDropdownMenu(eventTarget)
+        }
       }
     }
 
@@ -114,6 +133,11 @@ import logo from '../assets/img/logo.svg'
         const menuItems = [...mainMenu.querySelectorAll('.menu-item')]
         const currentDropdownMenu = element.closest('.has-dropdown button')
         const currentDropdownMenuItem = element.closest('.has-dropdown li')
+
+        if (!currentMenuItem) {
+          return;
+        }
+
         const currentIndex = menuItems.findIndex((item) => item === currentMenuItem)
 
         const key = event.key
@@ -139,7 +163,7 @@ import logo from '../assets/img/logo.svg'
           targetItem = menuItems[0]
         }
 
-        if (currentDropdownMenu) {
+        if (currentDropdownMenu && currentDropdownMenu.nextElementSibling) {
           const firstDropdownItem = currentDropdownMenu.nextElementSibling.querySelector('li')
 
           if (key === 'ArrowDown') {
@@ -153,7 +177,7 @@ import logo from '../assets/img/logo.svg'
           }
         }
 
-        if (currentDropdownMenuItem) {
+        if (currentDropdownMenuItem && currentDropdownMenuItem.parentNode) {
           const currentDropdownList = currentDropdownMenuItem.parentNode
           const dropdownMenuItems = [...currentDropdownList.querySelectorAll('li')]
           const currentIndex = dropdownMenuItems.findIndex((item) => item === currentDropdownMenuItem)
@@ -180,21 +204,22 @@ import logo from '../assets/img/logo.svg'
 
           if (key === 'Escape') {
             const currentDropdownMenu = (currentDropdownList as Element).previousElementSibling
-            targetItem = currentDropdownMenu.parentNode
+            targetItem = currentDropdownMenu?.parentNode
             closeAllDropdownMenus()
           }
 
           if (key === 'Tab') {
             const currentDropdownMenu = (currentDropdownList as Element).previousElementSibling
 
-            if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === dropdownMenuItems.length - 1) {
+            if (currentDropdownMenu && dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === dropdownMenuItems.length - 1) {
               closeDropdownMenu(currentDropdownMenu)
             }
           }
         }
 
         if (targetItem) {
-          targetItem.querySelector('a, button, input').focus()
+          const firstFocusable = targetItem.querySelector('a, button, input') as HTMLElement;
+          firstFocusable && firstFocusable.focus()
         }
       })
 
