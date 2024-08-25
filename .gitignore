@@ -24,4 +24,5 @@ yarn-error.log*
 .idea
 
 # package lock
-package-lock.json
+# GitHub Actions requires we check this in.
+#package-lock.json
