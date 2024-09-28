@@ -5,9 +5,9 @@
     "category": "Word",
     "difficulty": 1,
     "genre": "Throwing Shade",
-    "link": null,
+    "link": "https://l.puz.fun/pp2023shade",
     "name": "Throwing Shade 2023",
-    "pdfPage": 2,
+    "pdfPage": 8,
     "year": "2023"
   },
   {
@@ -238,32 +238,23 @@
   },
   {
     "author": "biocuriousgeorgie",
-    "authorSlug": "",
-    "category": "",
+    "authorSlug": "biocuriousgeorgie",
+    "category": "Hunt",
     "difficulty": 2,
-    "genre": "",
-    "name": "hunt-style puzzle ",
-    "pdfPage": -1,
+    "genre": "Hunt",
+    "name": "Sexual Orienteering",
+    "pdfPage": 11,
     "year": "2023"
   },
   {
     "author": "Brad LeBeau",
-    "authorSlug": "",
-    "category": "",
+    "authorSlug": "brad-lebeau",
+    "category": "Word",
     "difficulty": 3,
-    "genre": "",
-    "name": "variety cryptic",
-    "pdfPage": -1,
-    "year": "2023"
-  },
-  {
-    "author": "davmillar",
-    "authorSlug": "",
-    "category": "",
-    "difficulty": 2,
-    "genre": "",
-    "name": "Throwing Shade",
-    "pdfPage": -1,
+    "genre": "Variety Cryptic",
+    "link": "https://l.puz.fun/pp2023brad",
+    "name": "Coming Out",
+    "pdfPage": 8,
     "year": "2023"
   },
   {
@@ -271,9 +262,10 @@
     "authorSlug": "dohz",
     "category": "Logic",
     "difficulty": 3,
-    "genre": "",
+    "genre": "Homomino",
+    "link": "https://l.puz.fun/pp2023hom",
     "name": "Homomino",
-    "pdfPage": -1,
+    "pdfPage": 7,
     "year": "2023"
   },
   {
@@ -311,48 +303,45 @@
   },
   {
     "author": "Jamie Hargrove",
-    "authorSlug": "",
-    "category": "",
+    "authorSlug": "jamie-hargrove",
+    "category": "Logic",
     "difficulty": 3,
-    "genre": "",
+    "genre": "Maxi Loop",
+    "link": "https://l.puz.fun/pp2023jh1",
     "name": "Maxi Loop",
-    "pdfPage": -1,
+    "pdfPage": 10,
     "year": "2023"
   },
   {
     "author": "Jamie Hargrove",
-    "authorSlug": "",
-    "category": "",
+    "authorSlug": "jamie-hargrove",
+    "category": "Logic",
     "difficulty": 2,
-    "genre": "",
+    "genre": "Statue Park",
+    "link": "https://l.puz.fun/pp2023jhpark",
     "name": "Statue Park",
-    "pdfPage": -1,
+    "pdfPage": 7,
     "year": "2023"
   },
   {
     "author": "Kusane Hexaku",
-    "authorSlug": "",
-    "category": "",
+    "authorSlug": "kusane-hexaku",
+    "category": "Hunt",
     "difficulty": 5,
-    "genre": "",
-    "name": "crossword game is a crossword game puzzle",
-    "pdfPage": -1,
-    "year": "2023"
-  },
-  {
-    "author": "Kusane Hexaku",
-    "difficulty": 0,
-    "name": "hunt-style puzzle because crossword game is a hunt puzzle crossword game",
+    "genre": "Hunt",
+    "name": "Pride Crossword That Is Barely Any of the Mentioned",
+    "pdfPage": 10,
     "year": "2023"
   },
   {
     "author": "lumia",
-    "authorSlug": "",
-    "category": "",
+    "authorSlug": "lumia",
+    "category": "Logic",
     "difficulty": 2,
-    "genre": "",
-    "name": "trans quintuple choco",
-    "pdfPage": -1,
+    "genre": "Double Choco Variant",
+    "link": "https://l.puz.fun/pp2023choco",
+    "name": "Trans Quintuple Choco",
+    "pdfPage": 10,
     "year": "2023"
   },
   {
@@ -389,13 +378,13 @@
     "year": "2023"
   },
   {
-    "author": "Procyon",
-    "authorSlug": "",
-    "category": "",
+    "author": "Trevor Birenbaum",
+    "authorSlug": "trevor-birenbaum",
+    "category": "Word",
     "difficulty": 2,
-    "genre": "",
-    "name": "RATHER queer crossword",
-    "pdfPage": -1,
+    "genre": "Crossword",
+    "name": "Crossword",
+    "pdfPage": 9,
     "year": "2023"
   },
   {
@@ -405,7 +394,7 @@
     "difficulty": 3,
     "genre": "Tentaisho",
     "link": "https://l.puz.fun/pp2023romary",
-    "name": "Tentaisho/spiral galaxies",
+    "name": "Tentaisho/Spiral Galaxies",
     "pdfPage": 6,
     "year": "2023"
   },
@@ -433,12 +422,12 @@
   },
   {
     "author": "TasThiluna",
-    "authorSlug": "",
-    "category": "",
+    "authorSlug": "tasthiluna",
+    "category": "Hunt",
     "difficulty": 1,
-    "genre": "",
-    "name": "Hunt puzzle",
-    "pdfPage": -1,
+    "genre": "Hunt",
+    "name": "Sapphic Synonyms",
+    "pdfPage": 7,
     "year": "2023"
   },
   {
