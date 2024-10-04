@@ -1,57 +1,14 @@
 {
-    "david-millar": {
-        "name": "David Millar",
-        "externalLink": "https://thegriddle.net"
-    },
-    "jamie-hargrove": {
-        "name": "Jamie Hargrove",
-        "externalLink": "https://deceptivepuzzles.wordpress.com",
-    },
-    "dohz": {
-        "name": "dohz",
-        "externalLink": "https://cohost.org/dohz"
-    },
-    "buzzbee": {
-        "name": "BuzzBee",
-        "externalLink": "https://buzzwordspuzzles.blogspot.com"
-    },
-    "clover": {
-        "name": "clover",
-        "externalLink": "https://patreon.com/sudokuclover"
-    },
-    "trevor-birenbaum": {
-        "name": "Trevor Birenbaum",
-        "externalLink": "https://procyonpuzzles.wordpress.com"
-    },
-    "au-voleur": {
-        "name": "au voleur!",
-        "externalLink": "https://puzsq.logicpuzzle.app/?author=2248"
-    },
-    "bill-murphy": {
-        "name": "Bill Murphy",
-        "externalLink": "https://patreon.com/WWMSudoku"
-    },
-    "jack-lance": {
-        "name": "Jack Lance",
-        "externalUrl": "https://jacoblance.wordpress.com"
-    },
-    "lumia": {
-        "name": "lumia",
-        "externalUrl": "https://iam.lumia.gay"
-    },
-    "rubrica": {
-        "name": "Rubrica",
-        "externalUrl": "https://www.benwoodley.co.uk"
-    },
-    "teal": {
-        "name": "Teal",
-        "externalUrl": "https://twitter.com/TealsPuzzles"
-    },
-    "walker": {
-        "name": "Walker"
-    },
     "apiad": {
         "name": "apiad"
+    },
+    "au-voleur": {
+        "externalLink": "https://puzsq.logicpuzzle.app/?author=2248",
+        "name": "au voleur!"
+    },
+    "bill-murphy": {
+        "externalLink": "https://patreon.com/WWMSudoku",
+        "name": "Bill Murphy"
     },
     "biocuriousgeorgie": {
         "name": "biocuriousgeorgie"
@@ -59,11 +16,42 @@
     "brad-lebeau": {
         "name": "Brad LeBeau"
     },
+    "buzzbee": {
+        "externalLink": "https://buzzwordspuzzles.blogspot.com",
+        "name": "BuzzBee"
+    },
+    "clover": {
+        "externalLink": "https://patreon.com/sudokuclover",
+        "name": "clover"
+    },
+    "david-millar": {
+        "externalLink": "https://thegriddle.net",
+        "name": "David Millar"
+    },
+    "dohz": {
+        "externalLink": "https://cohost.org/dohz",
+        "name": "dohz"
+    },
+    "epictoast": {
+        "name": "EpicToast"
+    },
     "grkles": {
         "name": "grkles"
     },
+    "jack-lance": {
+        "externalUrl": "https://jacoblance.wordpress.com",
+        "name": "Jack Lance"
+    },
+    "jamie-hargrove": {
+        "externalLink": "https://deceptivepuzzles.wordpress.com",
+        "name": "Jamie Hargrove"
+    },
     "kusane-hexaku": {
         "name": "Kusane Hexaku"
+    },
+    "lumia": {
+        "externalUrl": "https://iam.lumia.gay",
+        "name": "lumia"
     },
     "lydian": {
         "name": "lydian"
@@ -71,25 +59,37 @@
     "math-pesto": {
         "name": "Math Pesto"
     },
-    "romary": {
-        "name": "romary"
-    },
     "rever": {
         "name": "Rever"
     },
-    "tasthiluna": {
-        "name": "TasThiluna"
+    "romary": {
+        "name": "romary"
     },
-    "thegreatescaper": {
-        "name": "TheGreatEscaper"
+    "rubrica": {
+        "externalUrl": "https://www.benwoodley.co.uk",
+        "name": "Rubrica"
     },
-    "epictoast": {
-        "name": "EpicToast"
+    "seren": {
+        "name": "Seren (star emoji)"
     },
     "sniper": {
         "name": "Sniper"
     },
-    "seren": {
-        "name": "Seren (star emoji)"
+    "tasthiluna": {
+        "name": "TasThiluna"
+    },
+    "teal": {
+        "externalUrl": "https://twitter.com/TealsPuzzles",
+        "name": "Teal"
+    },
+    "thegreatescaper": {
+        "name": "TheGreatEscaper"
+    },
+    "trevor-birenbaum": {
+        "externalLink": "https://procyonpuzzles.wordpress.com",
+        "name": "Trevor Birenbaum"
+    },
+    "walker": {
+        "name": "Walker"
     }
 }
