@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "sass:meta";
 // | -------------------------------------------------------------
 // | Breakpoint
 // | -------------------------------------------------------------
@@ -10,11 +12,11 @@ $breakpoints: (
 ) !default;
 
 @mixin breakpoint($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
-  } @else if (type_of($breakpoint) == number) {
+  } @else if (meta.type_of($breakpoint) == number) {
     @media (min-width: $breakpoint+"px") {
       @content;
     }
