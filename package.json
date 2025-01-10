@@ -13,29 +13,29 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^3.1.9",
-    "@astrojs/partytown": "^2.1.2",
-    "@astrojs/tailwind": "^5.1.2",
-    "@iconify-json/ion": "^1.2.1",
-    "@iconify-json/mdi": "^1.2.1",
+    "@astrojs/partytown": "^2.1.3",
+    "@astrojs/tailwind": "^5.1.4",
+    "@iconify-json/ion": "^1.2.2",
+    "@iconify-json/mdi": "^1.2.2",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "accessible-astro-components": "^2.3.6",
-    "astro": "^4.16.13",
-    "astro-compress": "^2.3.5",
-    "astro-icon": "^1.1.2",
+    "accessible-astro-components": "^2.4.0",
+    "astro": "^4.16.18",
+    "astro-compress": "^2.3.6",
+    "astro-icon": "^1.1.5",
     "eslint": "^8.57.1",
     "eslint-plugin-astro": "^0.23.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.8",
-    "sass": "^1.81.0",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "sass": "^1.83.1",
     "svgo": "^3.3.2",
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "sharp": "^0.33.5",
-    "typescript": "^5.6.3"
+    "typescript": "^5.7.3"
   },
   "packageManager": "npm@10.8.3+sha512.d08425c8062f56d43bb8e84315864218af2492eb769e1f1ca40740f44e85bd148969382d651660363942e5909cb7ffcbef7ca0ae963ddc2c57a51243b4da8f56"
 }
