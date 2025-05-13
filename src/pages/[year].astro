@@ -72,6 +72,8 @@ const defaultLink = `https://l.puz.fun/pp${year}`
             <th>Genre</th>
             <th>Difficulty</th>
             <th>Online Version</th>
+            <th>Download</th>
+            <th>Answer Checker</th>
             <th>PDF Page</th>
           </tr>
         </thead>
@@ -87,6 +89,12 @@ const defaultLink = `https://l.puz.fun/pp${year}`
                 <td>{puzzle.link ?
                   <a href={puzzle['link']} class="button size-small">{puzzle.linkText || 'Solve Online'}</a> :
                   <a href={defaultLink} class="button size-small color-secondary">PDF Only</a>
+                }</td>
+                <td>{puzzle.downloadURL ?
+                  <a href={puzzle['downloadURL']} class="button size-small">{puzzle.downloadText || 'Download'}</a> : ''
+                }</td>
+                <td>{puzzle.answerCheckURL ?
+                  <a href={puzzle['answerCheckURL']} class="button size-small">Checker</a> : ''
                 }</td>
                 <td>Page {puzzle.pdfPage}</td>
               </tr>
