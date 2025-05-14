@@ -149,6 +149,14 @@ const defaultLink = `https://l.puz.fun/pp${year}`
       td {
         padding: 5pt;
       }
+      tbody tr {
+        margin: 2rem 0;
+        padding: 1rem;
+        border-top: 1pt solid var(--neutral-400);
+        :global(.darkmode) & {
+          border-top: 1pt solid var(--neutral-700);
+        }
+      }
     }
   }
 
