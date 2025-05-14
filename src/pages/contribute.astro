@@ -3,7 +3,7 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
-import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
+import { Accordion, AccordionItem, Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 ---
 
 <DefaultLayout title="How to Contribute">
@@ -18,10 +18,15 @@ import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
   <section class="my-12">
     <div class="container">
       <h1 class="my-8"><span class="text-gradient">How to Contribute</span></h1>
-      
+
       <h2 class="my-16">2026 Theme: (To Be Announced...)</h2>
-      <p class="my-4">We're still resting following the release of our 2025 edition, and more info will be announced when we're ready to jump into planning for 2026! <em>Use of the theme is optional and is not mandatory for inclusion in the puzzle pack, but feel free to use it to inspire or motivate as desired.</em></p>
-      
+      <p class="my-4">
+        We're still resting following the release of our 2025 edition, and more info will be announced when we're ready
+        to jump into planning for 2026! <em
+          >Use of the theme is optional and is not mandatory for inclusion in the puzzle pack, but feel free to use it
+          to inspire or motivate as desired.</em>
+      </p>
+
       <h2 class="my-16">Onboarding</h2>
       <p class="my-4">
         Please reach out to <strong><a href="mailto:dave@davegoesthedistance.com">Dave</a></strong> (davmillar on Discord)
@@ -39,7 +44,7 @@ import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
     <div class="container">
       <h2 class="mb-16">Quick Info</h2>
       <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="February 1" title="Kickoff" sub="Planning Hits Full Gear" />
+        <Counter count="Feb. 1" title="Kickoff" sub="Planning Hits Full Gear" />
         <Counter count="May 3" title="All Puzzles" sub="Signup Deadline" />
         <Counter count="May 10" title="All Puzzles" sub="Final Draft Deadline" />
         <Counter count="June 1" title="Release Day" sub="Pride Month Starts" />
@@ -49,90 +54,103 @@ import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
   <section class="my-24">
     <div class="container">
       <h2 class="mb-16">About/FAQ</h2>
+      <Accordion>
+        <AccordionItem title="What kinda puzzles can I submit?">
+          <p>
+            Any kind you like! Ideally these would be 'pencil puzzles' that could be solved on paper, but we can also
+            include links to Penpa, F-Puzzle, Puzz.Link, etc. as well as offer PUZ, IPUZ, JPZ, or similar formats.
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">What kinda puzzles can I submit?</h4>
-      <p class="my-4">
-        Any kind you like! Ideally these would be 'pencil puzzles' that could be solved on paper, but we can also
-        include links to Penpa, F-Puzzle, Puzz.Link, etc. as well as offer PUZ, IPUZ, JPZ, or similar formats.
-      </p>
+        <AccordionItem title="Where is this being released?">
+          <p>
+            Here at the Puzzler Pride website, but all are welcome to share their own creations or the whole packet to
+            blogs and social media.
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">Where is this being released?</h4>
-      <p class="my-4">
-        Here at the Puzzler Pride website, but all are welcome to share their own creations or the whole packet to
-        blogs and social media.
-      </p>
+        <AccordionItem title="I'm LGBTQ+ but can't write puzzles. How can I help?">
+          <p>
+            We're happy to have you join as a test-solver! Sign up and just make that the 'status' on your row of the
+            spreadsheet. If you're interested in setting a puzzle for the first time, reach out to one of the organizers
+            and we can get you headed in the right direction!
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">I'm LGBTQ+ but can't write puzzles. How can I help?</h4>
-      <p class="my-4">
-        We're happy to have you join as a test-solver! Sign up and just make that the 'status' on your row of the
-        spreadsheet. If you're interested in setting a puzzle for the first time, reach out to one of the organizers and
-        we can get you headed in the right direction!
-      </p>
+        <AccordionItem title="I'm an ally, how can I help?">
+          <p>
+            Please share the puzzle pack with friends and loved ones! Also offer to test-solve for anyone in the sheet
+            who's making something you might enjoy. Most of all, help continue the fight for equal rights and dispel
+            disinformation from nay-sayers. We're a creative, thoughtful, and diverse bunch, and we love when you help
+            support our goals and affirm our right to exist.
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">I'm an ally, how can I help?</h4>
-      <p class="my-4">
-        Please share the puzzle pack with friends and loved ones! Also offer to test-solve for anyone in the sheet who's
-        making something you might enjoy. Most of all, help continue the fight for equal rights and dispel
-        disinformation from nay-sayers. We're a creative, thoughtful, and diverse bunch, and we love when you help
-        support our goals and affirm our right to exist.
-      </p>
+        <AccordionItem title="When are puzzles due?">
+          <p>
+            Ideally, we'd like to have initial drafts for substantial word and hunt-style puzzles by March 2, 2025, and
+            logic and all other puzzle types by April 27, 2025. We really want to lock in final drafts by May 11, 2025.
+            Submissions and edits after those dates may still be accepted at organizer discretion, but adequate testing
+            and time for the PDF layout is important for a June 1 launch date!
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">When are puzzles due?</h4>
-      <p class="my-4">
-        Ideally, we'd like to have initial drafts for substantial word and hunt-style puzzles by March 2, 2025, and
-        logic and all other puzzle types by April 27, 2025. We really want to lock in final drafts by May 11, 2025.
-        Submissions and edits after those dates may still be accepted at organizer discretion, but adequate testing and
-        time for the PDF layout is important for a June 1 launch date!
-      </p>
+        <AccordionItem title="Any other constraints?">
+          <p>
+            Ideally your puzzle should be no larger than 21x30 (21 grid cells wide and 30 grid cells tall) to fit the
+            layout of the PDF. 9x9 grids are a popular choice, and definitely stay smaller than the maximum size if
+            you're making an uncommon or original puzzle type that would benefit from instructional diagrams. See the
+            archives for examples of what to expect.
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">Any other constraints?</h4>
-      <p class="my-4">
-        Ideally your puzzle should be no larger than 21x30 (21 grid cells wide and 30 grid cells tall) to fit the layout
-        of the PDF. 9x9 grids are a popular choice, and definitely stay smaller than the maximum size if you're making
-        an uncommon or original puzzle type that would benefit from instructional diagrams. See the archives for
-        examples of what to expect.
-      </p>
+        <AccordionItem title="Can my puzzle feature a rainbow?">
+          <p>
+            Yes, although if color is not central to the content of the puzzle, it might be adjusted for print/viewing
+            in a way to make it accessible to those with color-blindness.
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">Can my puzzle feature a rainbow?</h4>
-      <p class="my-4">
-        Yes, although if color is not central to the content of the puzzle, it might be adjusted for print/viewing in a
-        way to make it accessible to those with color-blindness.
-      </p>
+        <AccordionItem title="Can I call 'dibs' on a specific puzzle genre?">
+          <p>
+            It's fine to announce what you intend to construct, but no special precautions will be taken to axe
+            duplicate genres. If you don't want to duplicate a genre, please use the search function to check the sheet
+            for the active event for the type you have in mind.
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">Can I call 'dibs' on a specific puzzle genre?</h4>
-      <p class="my-4">
-        It's fine to announce what you intend to construct, but no special precautions will be taken to axe duplicate
-        genres. If you don't want to duplicate a genre, please use the search function to check the sheet for the active
-        event for the type you have in mind.
-      </p>
+        <AccordionItem title="Wow, is (name) really LGBTQ+?">
+          <p>
+            Everyone who signs up is assumed to have done so voluntarily and with the understanding that this labels
+            their given name/nom de plume as identifying LGBTQIA+ &#8212; we are not looking to out anyone unwillingly.
+            No efforts will be taken to police or verify this info. That said, if you're not LGBTQIA+ and you just want
+            attention, please don't lie to sign up for this. There are other puzzle authoring showcases/events
+            throughout the year where we'll be happy to have you and show off what you can do.
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">Wow, is (name) really LGBTQ+?</h4>
-      <p class="my-4">
-        Everyone who signs up is assumed to have done so voluntarily and with the understanding that this labels their
-        given name/nom de plume as identifying LGBTQIA+ &#8212; we are not looking to out anyone unwillingly. No efforts
-        will be taken to police or verify this info. That said, if you're not LGBTQIA+ and you just want attention,
-        please don't lie to sign up for this. There are other puzzle authoring showcases/events throughout the year
-        where we'll be happy to have you and show off what you can do.
-      </p>
+        <AccordionItem title="Can I submit more than one puzzle?">
+          <p>
+            Yes! Please make a new grid entry for each additional puzzle to help with logistics. If things get unwieldy,
+            the organizers reserve the right to limit number of entries or ask you to save extras for next time.
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">Can I submit more than one puzzle?</h4>
-      <p class="my-4">
-        Yes! Please make a new grid entry for each additional puzzle to help with logistics. If things get unwieldy, the
-        organizers reserve the right to limit number of entries or ask you to save extras for next time.
-      </p>
+        <AccordionItem title="As an ally, can I co-author with a puzzler that is LGBTQ+?">
+          <p>
+            This is generally okay as long as it's primarily an amicable collaboration and focused on them and not a
+            backdoor into the showcase.
+          </p>
+        </AccordionItem>
 
-      <h3 class="my-4">As an ally, can I co-author with a puzzler that is LGBTQ+?</h4>
-      <p class="my-4">
-        This is generally okay as long as it's primarily an amicable collaboration and focused on them and not a
-        backdoor into the showcase.
-      </p>
-
-      <h3 class="my-4">How does copyright with this work?</h4>
-      <p class="my-4">
-        All authors retain copyright of their contributions. By submitting a puzzle, you grant the organizers and
-        participants the non-exclusive right to reproduce your puzzle in the PDF packet and relevant links or formats,
-        and to distribute the packet freely on blogs, social media, forums, etc.
-      </p>
+        <AccordionItem title="How does copyright with this work?">
+          <p>
+            All authors retain copyright of their contributions. By submitting a puzzle, you grant the organizers and
+            participants the non-exclusive right to reproduce your puzzle in the PDF packet and relevant links or
+            formats, and to distribute the packet freely on blogs, social media, forums, etc.
+          </p>
+        </AccordionItem>
+      </Accordion>
 
       <!-- <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
         <Feature icon="mdi:tailwind" title="Tailwind CSS">
