@@ -12,30 +12,11 @@
 @use 'base/color';
 @use 'base/outline';
 @use 'base/space-content';
-
-$rainbow: linear-gradient(
-  90deg,     
-  #f94a4c 8%,
-  #ff9055 25%,
-  #ffd078 42%,
-  #afd84a 58%,
-  #5e6ce6 75%,
-  #c35cf0 92%
-);
-
-$rainbow-dark: linear-gradient(
-  90deg,     
-  #f94a4c 8%,
-  #ff9055 25%,
-  #ffd078 42%,
-  #afd84a 58%,
-  #5e6ce6 75%,
-  #c35cf0 92%
-);
+@use 'base/gradients';
 
 .text-gradient {
   // background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-500));
-  background: $rainbow;
+  background: gradients.$rainbow;
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -43,7 +24,7 @@ $rainbow-dark: linear-gradient(
 
 .darkmode .text-gradient {
   // background: linear-gradient(315deg, var(--primary-200) 25%, var(--secondary-400));
-  background: $rainbow-dark;
+  background: gradients.$rainbow-dark;
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

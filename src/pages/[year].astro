@@ -1,24 +1,20 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import { Breadcrumbs, BreadcrumbsItem, Card } from 'accessible-astro-components'
+import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 import contentData from '../content.json'
 import puzzleData from '../puzzles.json'
 import Counter from '../components/Counter.astro'
+import ResponsiveTable from '../components/ResponsiveTable.astro'
 
 export async function getStaticPaths() {
   const yearData: { [key: string]: any } = contentData
   return Object.keys(yearData).map((year) => {
-
     const yearPuzzles = puzzleData
-                          .filter(p => p.year === year)
-                          .sort((a, b) => (
-                            a.name.localeCompare(b.name) ||
-                            a.author.localeCompare(b.author) || 
-                            a.difficulty - b.difficulty)
-                          )
-    const puzzlesThisYear = yearPuzzles.length;
-    const authorsThisYear = new Set(yearPuzzles.map(p => p.author)).size;
-    const genresThisYear = new Set(yearPuzzles.map(p => p.genre)).size;
+      .filter((p) => p.year === year)
+      .sort((a, b) => a.name.localeCompare(b.name) || a.author.localeCompare(b.author) || a.difficulty - b.difficulty)
+    const puzzlesThisYear = yearPuzzles.length
+    const authorsThisYear = new Set(yearPuzzles.map((p) => p.author)).size
+    const genresThisYear = new Set(yearPuzzles.map((p) => p.genre)).size
     return {
       params: { year },
       props: {
@@ -27,7 +23,7 @@ export async function getStaticPaths() {
         puzzles: yearPuzzles,
         puzzlesThisYear,
         authorsThisYear,
-        genresThisYear
+        genresThisYear,
       },
     }
   })
@@ -63,50 +59,75 @@ const defaultLink = `https://l.puz.fun/pp${year}`
   </section>
   <section class="my-12">
     <div class="container">
-      <table class="puzzle-table">
-        <thead>
-          <tr>
-            <th>Puzzle</th>
-            <th>Author</th>
-            <th>Type</th>
-            <th>Genre</th>
-            <th>Difficulty</th>
-            <th>Online Version</th>
-            <th>Download</th>
-            <th>Answer Checker</th>
-            <th>PDF Page</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            puzzles.map(puzzle => (
-              <tr>
-                <td><strong>{puzzle.name}</strong></td>
-                <td>{puzzle.author}</td>
-                <td>{puzzle.category}</td>
-                <td>{puzzle.genre}</td>
-                <td class="text-center">{puzzle.difficulty}</td>
-                <td>{puzzle.link ?
-                  <a href={puzzle['link']} class="button size-small">{puzzle.linkText || 'Solve Online'}</a> :
-                  <a href={defaultLink} class="button size-small color-secondary">PDF Only</a>
-                }</td>
-                <td>{puzzle.downloadURL ?
-                  <a href={puzzle['downloadURL']} class="button size-small">{puzzle.downloadText || 'Download'}</a> : ''
-                }</td>
-                <td>{puzzle.answerCheckURL ?
-                  <a href={puzzle['answerCheckURL']} class="button size-small">Checker</a> : ''
-                }</td>
-                <td>Page {puzzle.pdfPage}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
+      <ResponsiveTable className="puzzle-table-mobile" ratio="2/3" textAlign="left">
+        <table class="puzzle-table table-auto text-sm sm:text-xs md:text-xs">
+          <thead>
+            <tr>
+              <th>Puzzle</th>
+              <th>Author</th>
+              <th>Type</th>
+              <th>Genre</th>
+              <th>Difficulty</th>
+              <th>Link</th>
+              <th>Download</th>
+              <th>Checker</th>
+              <th>PDF Page</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              puzzles.map((puzzle) => (
+                <tr>
+                  <td>
+                    <strong>{puzzle.name}</strong>
+                  </td>
+                  <td>{puzzle.author}</td>
+                  <td>{puzzle.category}</td>
+                  <td>{puzzle.genre}</td>
+                  <td class="text-center">{puzzle.difficulty}</td>
+                  <td>
+                    {puzzle.link ? (
+                      <a href={puzzle['link']} class="button size-small behavior-full">
+                        {puzzle.linkText || 'Solve Online'}
+                      </a>
+                    ) : (
+                      <a href={defaultLink} class="button size-small color-secondary behavior-full">
+                        PDF Only
+                      </a>
+                    )}
+                  </td>
+                  <td>
+                    {puzzle.downloadURL ? (
+                      <a href={puzzle['downloadURL']} class="button size-small behavior-full">
+                        {puzzle.downloadText || 'Download'}
+                      </a>
+                    ) : (
+                      ''
+                    )}
+                  </td>
+                  <td>
+                    {puzzle.answerCheckURL ? (
+                      <a href={puzzle['answerCheckURL']} class="button size-small behavior-full">
+                        Check Answer
+                      </a>
+                    ) : (
+                      ''
+                    )}
+                  </td>
+                  <td>Page {puzzle.pdfPage}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </ResponsiveTable>
     </div>
   </section>
 </DefaultLayout>
 
 <style lang="scss">
+  @use '../assets/scss/base/gradients';
+
   ul {
     display: grid;
     grid-template-columns: 1fr;
@@ -122,16 +143,38 @@ const defaultLink = `https://l.puz.fun/pp${year}`
     }
   }
 
-  .puzzle-table tr {
-    td, th {
-      &:nth-child(1),
-      &:nth-child(2) {
-        width: 14em;
+  @media (min-width: 39.9375em) {
+    .puzzle-table {
+      th,
+      td {
+        padding: 5pt;
       }
-      &:nth-child(3),
-      &:nth-child(5),
-      &:nth-child(7) {
-        width: 7em;
+    }
+  }
+
+  @media (max-width: 39.9375em) {
+    .puzzle-table {
+      th,
+      td {
+        padding: 2pt 5pt;
+        &::before {
+          color: var(--primary-500);
+        }
+      }
+      tbody tr {
+        margin: 2rem 0;
+        padding: 1rem;
+        border: 1pt solid;
+        border-color: #fff;
+        border-image: gradients.$rainbow 1;
+      }
+    }
+    :global(.darkmode) .puzzle-table {
+      th,
+      td {
+        &::before {
+          color: var(--secondary-500) !important;
+        }
       }
     }
   }
