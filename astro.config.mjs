@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from "@tailwindcss/vite";
 import compress from 'astro-compress'
 import icon from "astro-icon"
 
@@ -8,7 +8,8 @@ import icon from "astro-icon"
 export default defineConfig({
   site: 'https://pride.puz.fun',
   compressHTML: true,
-  integrations: [mdx(), icon(), tailwind({
-    applyBaseStyles: false,
-  }), compress()],
+  integrations: [mdx(), icon(), compress()],
+  vite: {
+    plugins: [tailwindcss()],
+  },
 })
