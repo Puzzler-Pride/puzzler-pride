@@ -34,7 +34,7 @@
     "vite-plugin-devtools-json": "^0.1.0"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.6",
+    "@tailwindcss/vite": "^4.1.7",
     "@zachleat/table-saw": "^1.0.6",
     "sharp": "^0.33.5",
     "typescript": "^5.8.3"
