@@ -5,6 +5,7 @@ import contentData from '../content.json'
 import puzzleData from '../puzzles.json'
 import Counter from '../components/Counter.astro'
 import ResponsiveTable from '../components/ResponsiveTable.astro'
+import KenKenNotice from '../components/KenKenNotice.astro'
 
 export async function getStaticPaths() {
   const yearData: { [key: string]: any } = contentData
@@ -15,12 +16,15 @@ export async function getStaticPaths() {
     const puzzlesThisYear = yearPuzzles.length
     const authorsThisYear = new Set(yearPuzzles.map((p) => p.author)).size
     const genresThisYear = new Set(yearPuzzles.map((p) => p.genre)).size
+    const showKenKenMessage = yearPuzzles.some((p) => p.name.match(/kenken/ig));
+
     return {
       params: { year },
       props: {
         year,
         yearMeta: yearData[year],
         puzzles: yearPuzzles,
+        showKenKenMessage,
         puzzlesThisYear,
         authorsThisYear,
         genresThisYear,
@@ -29,7 +33,7 @@ export async function getStaticPaths() {
   })
 }
 
-const { yearMeta, year, puzzles, puzzlesThisYear, authorsThisYear, genresThisYear } = Astro.props
+const { yearMeta, year, puzzles, puzzlesThisYear, authorsThisYear, genresThisYear, showKenKenMessage } = Astro.props
 const defaultLink = `https://l.puz.fun/pp${year}`
 ---
 
@@ -123,6 +127,9 @@ const defaultLink = `https://l.puz.fun/pp${year}`
       </ResponsiveTable>
     </div>
   </section>
+  {
+    showKenKenMessage ? <KenKenNotice /> : null
+  }
 </DefaultLayout>
 
 <style lang="scss">
