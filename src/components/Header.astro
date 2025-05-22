@@ -3,6 +3,8 @@ import Navigation from '../components/Navigation.astro'
 import { SkipLink } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 import contentData from '../content.json'
+
+const mastodonTitle = 'Go to @pride on Mastodon';
 ---
 
 <header>
@@ -29,11 +31,11 @@ import contentData from '../content.json'
         }
       </ul>
     </li>
-    <!-- <li class="menu-item type-icon">
-      <a href="https://github.com/markteekman/accessible-astro-starter" title="Go to the GitHub page">
-        <Icon name="ion:logo-github" />
+    <li class="menu-item type-icon">
+      <a href="https://puz.fun/@pride" title={mastodonTitle} aria-label={mastodonTitle}>
+        <Icon name="ion:logo-mastodon" desc="Mastodon logo" />
       </a>
-    </li> -->
+    </li>
   </Navigation>
 </header>
 
