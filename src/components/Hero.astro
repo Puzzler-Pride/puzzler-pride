@@ -1,15 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components'
-
-const { } = Astro.props
 ---
 
-<section class="hero my-24">
+<section class="hero my-24 py-16">
   <div class="container">
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-5xl md:text-left lg:text-8xl">
-          Puzzler Pride 2024: <span class="text-gradient" data-text="Infinite Pride Edition">Infinite Pride Edition</span>
+        <h1 class="text-5xl md:text-left lg:text-8xl text-gradient">
+          Puzzler Pride 2025: Intersectionality Edition
         </h1>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <a class="button has-icon" href="https://l.puz.fun/pp2024">
@@ -18,7 +16,7 @@ const { } = Astro.props
           </a>
           <a
             class="button has-icon color-secondary"
-            href="/2024"
+            href="/2025"
           >
             <Icon name="ion:list-outline" />
             Learn More
@@ -32,14 +30,7 @@ const { } = Astro.props
 <style lang="scss" is:global>
   .hero {
     background: var(--background) url('/src/assets/img/banner.png') no-repeat top right;
-    background-size: contain;
-
-    h1 {
-      color: #000;
-      .text-gradient {
-        -webkit-text-stroke: 2pt #000;
-      }
-    }
+    background-size: cover;
   }
 
   // @supports (-webkit-text-stroke: 2pt black) {
