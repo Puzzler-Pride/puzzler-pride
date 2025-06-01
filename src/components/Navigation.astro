@@ -2,14 +2,14 @@
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
 import { Image } from 'astro:assets'
-import logo from '../assets/img/logo.svg'
+import Logo from '../assets/img/Puzzler_Pride_logofinal.svg'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
-      <Image src={logo} alt="Your Logo" width="47" height="37" />
-      <span class="text-gradient font-bold">Puzzler Pride</span>
+      <Logo width="60" height="60" />
+      <span class="text-gradient text-3xl font-bold">Puzzler Pride</span>
     </a>
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">

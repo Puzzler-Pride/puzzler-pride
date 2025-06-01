@@ -1,5 +1,5 @@
 ---
-import '@astrojs/tailwind/base.css'
+import '../assets/css/global.css'
 import '../assets/scss/globals.scss'
 import SiteMeta from '../components/SiteMeta.astro'
 import Header from '../components/Header.astro'
@@ -21,7 +21,7 @@ const {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
 
     <SiteMeta
       title={title}
@@ -46,8 +46,8 @@ const {
         --radius-large: 6px;
         --gap-default: 2rem;
         --font-measure: 70ch;
-        --font-family-default: 'Open Sans', sans-serif;
-        --font-family-special: 'Open Sans', sans-serif;
+        --font-family-default: 'Recursive', monospace;
+        --font-family-special: 'Recursive', monospace;
         // light theme
         --font-color: var(--neutral-900);
         --action-color: var(--primary-300);
