@@ -2,10 +2,16 @@
 import { ClientRouter } from 'astro:transitions'
 
 const defaultImage = '/src/assets/img/site-banner-2025.png';
-const { title, description, url, image = defaultImage, author } = Astro.props
-
-let subtitle = 'Puzzler Pride';
-let ogImageUrl = (Astro.site ? `${Astro.site}${image}` : image).replace(/\/{2,}/, '/');
+const {
+  title,
+  description,
+  url,
+  image = defaultImage,
+  author = 'Puzzler Pride Team'
+} = Astro.props
+const astroUrl = Astro.site ? String(Astro.site).replace(/\/$/, '') : '';
+const subtitle = 'Puzzler Pride';
+const ogImageUrl = `${astroUrl}${image}`;
 
 ---
 
