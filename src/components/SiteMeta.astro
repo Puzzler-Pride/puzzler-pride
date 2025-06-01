@@ -1,9 +1,12 @@
 ---
 import { ClientRouter } from 'astro:transitions'
 
-const { title, description, url, image, author } = Astro.props
+const defaultImage = '/src/assets/img/site-banner-2025.png';
+const { title, description, url, image = defaultImage, author } = Astro.props
 
-let subtitle = 'Puzzler Pride'
+let subtitle = 'Puzzler Pride';
+let ogImageUrl = (Astro.site ? `${Astro.site}${image}` : image).replace(/\/{2,}/, '/');
+
 ---
 
 <!-- general meta -->
@@ -16,7 +19,7 @@ let subtitle = 'Puzzler Pride'
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={url} />
-<meta property="og:image" content={Astro.site ? `${Astro.site}${image}` : image} />
+<meta property="og:image" content={ogImageUrl} />
 
 <!-- twitter card -->
 
