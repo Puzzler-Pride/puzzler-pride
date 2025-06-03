@@ -50,6 +50,9 @@ const defaultLink = `https://l.puz.fun/pp${year}`
     <div class="container">
       <h1><span class="text-gradient">{year}: {yearMeta.tagline}</span></h1><br />
       <p>Get the PDF over at <a href={defaultLink}>The Griddle</a>.</p>
+      {
+        String(year) === '2025' ? <p style="color: red;">Errata: We have unfortunately discovered multiple solutions to Cipher X-Sums by Gene. A replacement puzzle will be released in the near future. Sorry for any convenience!</p> : null
+      }
     </div>
   </section>
   <section class="my-24">
