@@ -12,6 +12,7 @@ export async function getStaticPaths() {
   return Object.keys(yearData).map((year) => {
     const yearPuzzles = puzzleData
       .filter((p) => p.year === year)
+      .filter((p) => !p.isBroken)
       .sort((a, b) => a.name.localeCompare(b.name) || a.author.localeCompare(b.author) || a.difficulty - b.difficulty)
     const puzzlesThisYear = yearPuzzles.length
     const authorsThisYear = new Set(yearPuzzles.map((p) => p.author)).size
