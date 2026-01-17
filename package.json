@@ -11,8 +11,8 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/mdx": "^4.3.13",
     "@astrojs/partytown": "^2.1.4",
     "@iconify-json/ion": "^1.2.6",
     "@iconify-json/mdi": "^1.2.3",
@@ -25,19 +25,19 @@
     "eslint": "^8.57.1",
     "eslint-plugin-astro": "^0.23.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "prettier": "^3.6.2",
+    "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.14",
-    "sass": "^1.91.0",
+    "sass": "^1.97.2",
     "svgo": "^3.3.2",
     "tailwindcss": "^4.1.6",
     "vite-plugin-devtools-json": "^0.1.1"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.11",
-    "@zachleat/table-saw": "^1.0.6",
+    "@tailwindcss/vite": "^4.1.18",
+    "@zachleat/table-saw": "^1.0.7",
     "sharp": "^0.33.5",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "overrides": {
     "astro": "^5.16.11",
