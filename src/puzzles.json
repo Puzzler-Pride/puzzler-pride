@@ -829,5 +829,15 @@
     "name": "Going Both Ways",
     "pdfPage": 11,
     "year": "2025"
+  },
+  {
+    "author": "Cute Mage",
+    "authorSlug": "cutemage",
+    "category": "Word",
+    "difficulty": 3,
+    "genre": "Letter Web",
+    "name": "In the Closet",
+    "pdfPage": 2,
+    "year": "2026"
   }
 ]
