@@ -1,13 +1,13 @@
 ---
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { DarkMode } from 'accessible-astro-components'
-import { Image } from 'astro:assets'
+// import { Image } from 'astro:assets'
 import Logo from '../assets/img/Puzzler_Pride_logofinal.svg'
 ---
 
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
-    <a href="/" class="flex items-center gap-2 !no-underline">
+    <a href="/" class="flex items-center gap-2 no-underline!">
       <Logo width="60" height="60" />
       <span class="text-gradient text-3xl font-bold">Puzzler Pride</span>
     </a>
@@ -94,7 +94,7 @@ import Logo from '../assets/img/Puzzler_Pride_logofinal.svg'
 
       dropdownMenu.classList.add('show')
       dropdownMenu.setAttribute('aria-expanded', 'true')
-      
+
       const dropdownList = dropdownParent.querySelector('ul')
 
       if (dropdownList && isOutOfViewport(dropdownList)) {

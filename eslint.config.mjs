@@ -1,30 +1,25 @@
-const {
-  defineConfig,
-  globalIgnores,
-} = require("eslint/config");
+import { defineConfig, globalIgnores } from "eslint/config";
 
-const globals = require("globals");
-const parser = require("astro-eslint-parser");
-const tsParser = require("@typescript-eslint/parser");
-const js = require("@eslint/js");
+import { node, browser } from "globals";
+import parser from "astro-eslint-parser";
+import tsParser from "@typescript-eslint/parser";
+import { configs } from "@eslint/js";
 
-const {
-  FlatCompat,
-} = require("@eslint/eslintrc");
+import { FlatCompat } from "@eslint/eslintrc";
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
+  recommendedConfig: configs.recommended,
+  allConfig: configs.all
 });
 
-module.exports = defineConfig([  
+export default defineConfig([
   globalIgnores([".astro/*"]),
   {
     languageOptions: {
       globals: {
-        ...globals.node,
-        ...globals.browser,
+        ...node,
+        ...browser,
       },
 
       ecmaVersion: "latest",
