@@ -1,5 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components'
+import { curYear } from '../site'
+import contentData from '../content.json'
+
+const yearData = contentData[curYear];
+
 ---
 
 <section class="hero my-24 py-16">
@@ -7,16 +12,16 @@ import { Icon } from 'astro-icon/components'
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
         <h1 class="text-5xl md:text-left lg:text-8xl text-gradient">
-          Puzzler Pride 2025: Intersectionality Edition
+          Puzzler Pride {curYear}: {yearData.tagline}
         </h1>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a class="button has-icon" href="https://l.puz.fun/pp2025">
+          <a class="button has-icon" href=`https://l.puz.fun/pp${curYear}`>
             <Icon name="ion:document-outline" />
             Get the PDF
           </a>
           <a
             class="button has-icon color-secondary"
-            href="/2025"
+            href=`/${curYear}`
           >
             <Icon name="ion:list-outline" />
             Learn More
