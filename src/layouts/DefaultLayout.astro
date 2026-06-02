@@ -4,12 +4,13 @@ import '../assets/scss/globals.scss'
 import SiteMeta from '../components/SiteMeta.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import { defaultAuthor, defaultImage } from '../site'
 
 const {
   title = 'Puzzler Pride',
   description = 'An annual showcase of puzzles written by LGBTQIA+ folx.',
-  image = '/site-banner-2026.png',
-  author = 'David Millar',
+  image = defaultImage,
+  author = defaultAuthor,
 } = Astro.props
 ---
 

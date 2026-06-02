@@ -1,35 +1,33 @@
 ---
 import { ClientRouter } from 'astro:transitions'
+import { defaultAuthor, defaultImage } from '../site';
 
-const defaultImage = '/site-banner-2026.png';
 const {
   title,
   description,
   url,
   image = defaultImage,
-  author = 'Puzzler Pride Team'
+  author = defaultAuthor
 } = Astro.props
 const astroUrl = Astro.site ? String(Astro.site).replace(/\/$/, '') : '';
 const subtitle = 'Puzzler Pride';
 const ogImageUrl = `${astroUrl}${image}`;
-
+const composedTitle = `${title} - ${subtitle}`;
 ---
 
 <!-- general meta -->
-<meta name="title" content={`${title} - ${subtitle}`} />
+<meta name="title" content={composedTitle} />
 <meta name="description" content={description} />
 <meta name="author" content={author} />
 
 <!-- open graph -->
-<meta property="og:title" content={`${title} - ${subtitle}`} />
+<meta property="og:title" content={composedTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:type" content="website" />
 <meta property="og:url" content={url} />
 <meta property="og:image" content={ogImageUrl} />
 
-<!-- twitter card -->
-
 <!-- page title -->
-<title>{title} - {subtitle}</title>
+<title>{composedTitle}</title>
 
 <ClientRouter />
