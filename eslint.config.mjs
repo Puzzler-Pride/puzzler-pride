@@ -1,25 +1,30 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 
-import { node, browser } from "globals";
+import globals from "globals";
 import parser from "astro-eslint-parser";
 import tsParser from "@typescript-eslint/parser";
-import { configs } from "@eslint/js";
+import eslintJs from "@eslint/js";
 
 import { FlatCompat } from "@eslint/eslintrc";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-  recommendedConfig: configs.recommended,
-  allConfig: configs.all
+  recommendedConfig: eslintJs.configs.recommended,
+  allConfig: eslintJs.configs.all
 });
 
 export default defineConfig([
-  globalIgnores([".astro/*"]),
+  globalIgnores(["**/.astro/", "dist/"]),
   {
     languageOptions: {
       globals: {
-        ...node,
-        ...browser,
+        ...globals.node,
+        ...globals.browser,
       },
 
       ecmaVersion: "latest",
