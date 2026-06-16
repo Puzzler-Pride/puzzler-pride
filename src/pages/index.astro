@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
+import { Icon } from 'astro-icon/components'
 // import Feature from '../components/Feature.astro'
 // import Counter from '../components/Counter.astro'
 // import ContentMedia from '../components/ContentMedia.astro'
@@ -10,7 +11,20 @@ import Hero from '../components/Hero.astro'
   <Hero />
   <section class="my-32">
     <div class="container">
-      <p>You should also check out the project <a href="https://sites.google.com/view/transxwords">a trans person made your puzzle</a>!</p>
+      <h2 class="my-16">More from LGBTQIA+ Puzzle Authors</h2>
+      <div class="flex flex-col gap-3 min-[500px]:flex-row">
+        <a class="button has-icon color-rainbow" href="https://sites.google.com/view/transxwords">
+          <Icon name="ion:document-outline" />
+          a trans person made your puzzle
+        </a>
+        <a
+          class="button has-icon color-rainbow"
+          href="https://drive.google.com/file/d/15YPeMnkmZ4XyYnoZgkUf5oxieUZdl-YV/view"
+        >
+          <Icon name="ion:document-outline" />
+          <em>A Pride Puzzle</em> by Justin Ladia
+        </a>
+      </div>
     </div>
   </section>
   <!-- <section class="mb-32 mt-64">

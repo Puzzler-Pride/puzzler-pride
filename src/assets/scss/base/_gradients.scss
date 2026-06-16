@@ -1,22 +1,4 @@
-$rainbow: linear-gradient(
-  90deg,     
-  #f94a4c 8%,
-  #ff9055 25%,
-  #ffd078 42%,
-  #afd84a 58%,
-  #5e6ce6 75%,
-  #c35cf0 92%
-);
-
-$rainbow-dark: linear-gradient(
-  90deg,     
-  #f94a4c 8%,
-  #ff9055 25%,
-  #ffd078 42%,
-  #afd84a 58%,
-  #5e6ce6 75%,
-  #c35cf0 92%
-);
+@use 'sass:color';
 
 $ppred:    #f94a4c;
 $pporange: #ff9055;
@@ -24,3 +6,39 @@ $ppyellow: #ffd078;
 $ppgreen:  #afd84a;
 $ppblue:   #5e6ce6;
 $pppurple: #c35cf0;
+
+$rainbow: linear-gradient(
+  90deg,
+  $ppred 8%,
+  $pporange 25%,
+  $ppyellow 42%,
+  $ppgreen 58%,
+  $ppblue 75%,
+  $pppurple 92%
+);
+
+$dark-adjust: 20%;
+$light-adjust: 10%;
+$sat-adjust: 20%;
+
+$rainbow-dark: $rainbow;
+
+// $rainbow-corners-dark: linear-gradient(
+//   100deg,
+//   color.adjust($ppred, $lightness: -$dark-adjust, $saturation: $sat-adjust) 8%,
+//   color.adjust($pporange, $lightness: -$dark-adjust, $saturation: $sat-adjust) 25%,
+//   color.adjust($ppyellow, $lightness: -$dark-adjust, $saturation: $sat-adjust) 42%,
+//   color.adjust($ppgreen, $lightness: -$dark-adjust, $saturation: $sat-adjust) 58%,
+//   color.adjust($ppblue, $lightness: -$dark-adjust, $saturation: $sat-adjust) 75%,
+//   color.adjust($pppurple, $lightness: -$dark-adjust, $saturation: $sat-adjust) 92%
+// );
+
+$rainbow-light: linear-gradient(
+  90deg,
+  color.adjust($ppred, $lightness: $light-adjust, $saturation: $sat-adjust) 8%,
+  color.adjust($pporange, $lightness: $light-adjust, $saturation: $sat-adjust) 25%,
+  color.adjust($ppyellow, $lightness: $light-adjust, $saturation: $sat-adjust) 42%,
+  color.adjust($ppgreen, $lightness: $light-adjust, $saturation: $sat-adjust) 58%,
+  color.adjust($ppblue, $lightness: $light-adjust, $saturation: $sat-adjust) 75%,
+  color.adjust($pppurple, $lightness: $light-adjust, $saturation: $sat-adjust) 92%
+);
