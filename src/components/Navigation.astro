@@ -126,7 +126,7 @@ import Logo from '../assets/img/Puzzler_Pride_logofinal.svg'
     }
 
     // execution
-    mainMenu &&
+    if (mainMenu) {
       mainMenu.addEventListener('keydown', (event) => {
         const element = event.target as Element
         const currentMenuItem = element.closest('li')
@@ -219,17 +219,19 @@ import Logo from '../assets/img/Puzzler_Pride_logofinal.svg'
 
         if (targetItem) {
           const firstFocusable = targetItem.querySelector('a, button, input') as HTMLElement;
-          firstFocusable && firstFocusable.focus()
+          if (firstFocusable) { firstFocusable.focus(); }
         }
-      })
+      });
+    }
 
-    dropdownMenus &&
+    if (dropdownMenus) {
       dropdownMenus.forEach((dropdownMenu) => {
         dropdownMenu.addEventListener('click', toggleDropdownMenu)
-      })
+      });
+    }
 
-    setActiveMenuItem()
-    checkMenuSize()
+    setActiveMenuItem();
+    checkMenuSize();
 
     window.addEventListener('resize', checkMenuSize)
     window.addEventListener('click', (event) => {

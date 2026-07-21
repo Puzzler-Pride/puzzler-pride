@@ -32,7 +32,11 @@
       const mobileNavigation = document.querySelector('.mobile-menu')
 
       mobileNavigation?.classList.toggle('show')
-      mobileNavigation?.classList.contains('show') ? openMenu(responsiveToggle) : closeMenu(responsiveToggle)
+      if (mobileNavigation?.classList.contains('show')) {
+        openMenu(responsiveToggle);
+      } else {
+        closeMenu(responsiveToggle);
+      }
     })
   })
 </script>
