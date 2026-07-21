@@ -1,18 +1,12 @@
 ---
 import { ClientRouter } from 'astro:transitions'
-import { defaultAuthor, defaultImage } from '../site';
+import { defaultAuthor, defaultImage } from '../site'
 
-const {
-  title,
-  description,
-  url,
-  image = defaultImage,
-  author = defaultAuthor
-} = Astro.props
-const astroUrl = Astro.site ? String(Astro.site).replace(/\/$/, '') : '';
-const subtitle = 'Puzzler Pride';
-const ogImageUrl = `${astroUrl}${image}`;
-const composedTitle = `${title} - ${subtitle}`;
+const { title, description, url, image = defaultImage, author = defaultAuthor } = Astro.props
+const astroUrl = Astro.site ? String(Astro.site).replace(/\/$/, '') : ''
+const subtitle = 'Puzzler Pride'
+const ogImageUrl = `${astroUrl}${image}`
+const composedTitle = `${title} - ${subtitle}`
 ---
 
 <!-- general meta -->

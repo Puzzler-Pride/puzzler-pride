@@ -17,7 +17,7 @@ export async function getStaticPaths() {
     const puzzlesThisYear = yearPuzzles.length
     const authorsThisYear = new Set(yearPuzzles.map((p) => p.author)).size
     const genresThisYear = new Set(yearPuzzles.map((p) => p.genre)).size
-    const showKenKenMessage = yearPuzzles.some((p) => p.name.match(/kenken/ig));
+    const showKenKenMessage = yearPuzzles.some((p) => p.name.match(/kenken/gi))
 
     return {
       params: { year },
@@ -52,13 +52,18 @@ const defaultLink = `https://l.puz.fun/pp${year}`
       <h1><span class="text-gradient">{year}: {yearMeta.tagline}</span></h1><br />
       <p>Get the PDF over at <a href={defaultLink}>The Griddle</a>.</p>
       {
-        String(year) === '2025' ? <p style="color: red;">Errata: We have unfortunately discovered multiple solutions to Cipher X-Sums by Gene. A replacement puzzle will be released in the near future. Sorry for any convenience!</p> : null
+        String(year) === '2025' ? (
+          <p style="color: red;">
+            Errata: We have unfortunately discovered multiple solutions to Cipher X-Sums by Gene. A replacement puzzle
+            will be released in the near future. Sorry for any convenience!
+          </p>
+        ) : null
       }
     </div>
   </section>
   <section class="my-24">
     <div class="container">
-      <div class="grid gap-12 grid-cols-1 sm:grid-cols-3">
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-3">
         <Counter count={puzzlesThisYear} title="Puzzles" sub="Total" />
         <Counter count={authorsThisYear} title="Authors" sub="Contributed" />
         <Counter count={genresThisYear} title="Genres" sub="Represented" />
@@ -68,7 +73,7 @@ const defaultLink = `https://l.puz.fun/pp${year}`
   <section class="my-12">
     <div class="container">
       <ResponsiveTable className="puzzle-table-mobile" ratio="2/3" textAlign="left">
-        <table class="puzzle-table table-auto text-md sm:text-xs md:text-sm lg:text-base">
+        <table class="puzzle-table text-md table-auto sm:text-xs md:text-sm lg:text-base">
           <thead>
             <tr>
               <th>Puzzle</th>
@@ -118,13 +123,11 @@ const defaultLink = `https://l.puz.fun/pp${year}`
                       <a href={puzzle['answerCheckURL']} class="button size-small behavior-full">
                         Check Answer
                       </a>
+                    ) : String(year) === '2025' ? (
+                      <a href={defaultLink} class="button size-small color-secondary behavior-full">
+                        PDF Answer Key Only
+                      </a>
                     ) : (
-                      String(year) === '2025' ?
-                      (
-                        <a href={defaultLink} class="button size-small color-secondary behavior-full">
-                          PDF Answer Key Only
-                        </a>
-                      ) :
                       ''
                     )}
                   </td>
@@ -137,9 +140,7 @@ const defaultLink = `https://l.puz.fun/pp${year}`
       </ResponsiveTable>
     </div>
   </section>
-  {
-    showKenKenMessage ? <KenKenNotice /> : null
-  }
+  {showKenKenMessage ? <KenKenNotice /> : null}
 </DefaultLayout>
 
 <style lang="scss">

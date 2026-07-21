@@ -2,16 +2,11 @@
 // src/components/ResponsiveTable.astro
 const { breakpoint, className, ratio, textAlign, zeroPadding } = Astro.props
 ---
-<table-saw
-  breakpoint={breakpoint} 
-  class={className} 
-  ratio={ratio} 
-  text-align={textAlign}
-  zero-padding={zeroPadding}
->
+
+<table-saw breakpoint={breakpoint} class={className} ratio={ratio} text-align={textAlign} zero-padding={zeroPadding}>
   <slot />
 </table-saw>
-  
+
 <script>
-  import '@zachleat/table-saw';
+  import '@zachleat/table-saw'
 </script>

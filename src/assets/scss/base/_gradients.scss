@@ -1,21 +1,13 @@
 @use 'sass:color';
 
-$ppred:    #f94a4c;
+$ppred: #f94a4c;
 $pporange: #ff9055;
 $ppyellow: #ffd078;
-$ppgreen:  #afd84a;
-$ppblue:   #5e6ce6;
+$ppgreen: #afd84a;
+$ppblue: #5e6ce6;
 $pppurple: #c35cf0;
 
-$rainbow: linear-gradient(
-  90deg,
-  $ppred 8%,
-  $pporange 25%,
-  $ppyellow 42%,
-  $ppgreen 58%,
-  $ppblue 75%,
-  $pppurple 92%
-);
+$rainbow: linear-gradient(90deg, $ppred 8%, $pporange 25%, $ppyellow 42%, $ppgreen 58%, $ppblue 75%, $pppurple 92%);
 
 $dark-adjust: 20%;
 $light-adjust: 10%;

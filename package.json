@@ -8,8 +8,9 @@
     "dev": "npx astro dev",
     "start": "npx astro dev",
     "build": "npx astro check && npx astro build",
-    "lint": "npx eslint",
-    "lint-fix": "npm run lint -- --fix",
+    "lint": "npx eslint && npx prettier . --check",
+    "lint-fix": "npx eslint --fix",
+    "format": "npx prettier . --write",
     "preview": "npx astro preview"
   },
   "devDependencies": {
