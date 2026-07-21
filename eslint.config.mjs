@@ -1,88 +1,107 @@
-import { defineConfig, globalIgnores } from "eslint/config";
+import { defineConfig } from "eslint/config";
 
 import globals from "globals";
-import parser from "astro-eslint-parser";
+import * as astroParser from "astro-eslint-parser";
 import tsParser from "@typescript-eslint/parser";
 import eslintJs from "@eslint/js";
+import tseslint from "typescript-eslint";
+import astro from "eslint-plugin-astro";
+import prettier from "eslint-plugin-prettier";
 
-import { FlatCompat } from "@eslint/eslintrc";
-import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: eslintJs.configs.recommended,
-  allConfig: eslintJs.configs.all
-});
-
-export default defineConfig([
-  globalIgnores(["**/.astro/", "dist/"]),
-  {
-    languageOptions: {
-      globals: {
-        ...globals.node,
-        ...globals.browser,
-      },
-
-      ecmaVersion: "latest",
-      sourceType: "module",
-      parserOptions: {},
-    },
-
-    extends: compat.extends(
-      "eslint:recommended",
-      "plugin:astro/recommended",
-      "plugin:astro/jsx-a11y-strict",
-    ),
-
-    rules: {},
-  }, {
-    files: ["**/*.js"],
-
-    rules: {
-      "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
-    },
-  }, {
-    files: ["**/*.astro"],
-
-    languageOptions: {
-      parser: parser,
-
-      parserOptions: {
-        parser: "@typescript-eslint/parser",
-        extraFileExtensions: [".astro"],
+export default defineConfig(
+  [
+    // Global configuration
+    {
+      languageOptions: {
+        globals: {
+          ...globals.browser,
+          ...globals.node,
+        },
       },
     },
 
-    rules: {
-      "no-unused-vars": "warn",
-      "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+    // Base configs
+    eslintJs.configs.recommended,
+
+    // Prettier config
+    {
+      plugins: {
+        prettier: prettier,
+      },
+      rules: {
+        // disable warnings, since prettier should format on save
+        "prettier/prettier": "off",
+      },
     },
-  }, {
-    files: ["**/*.ts"],
 
-    languageOptions: {
-      parser: tsParser,
+    // astro setup without a11y
+    astro.configs.recommended,
+
+    {
+      files: ["**/*.astro"],
+      languageOptions: {
+        parser: astroParser,
+        parserOptions: {
+          parser: tsParser,
+          extraFileExtensions: [".astro"],
+          sourceType: "module",
+          ecmaVersion: "latest",
+          project: "./tsconfig.json",
+        },
+      },
+      rules: {
+        "no-undef": "off", // Disable "not defined" errors for specific Astro types that are globally available (ImageMetadata)
+        "@typescript-eslint/no-explicit-any": "off", // you may want this as it can get annoying
+      },
     },
 
-    extends: compat.extends("plugin:@typescript-eslint/recommended"),
+    {
+      files: ["**/*.js"],
 
-    rules: {
-      "@typescript-eslint/no-unused-vars": ["error", {
-        argsIgnorePattern: "^_",
-        destructuredArrayIgnorePattern: "^_",
-      }],
-
-      "@typescript-eslint/no-non-null-assertion": "off",
+      rules: {
+        "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+      },
     },
-  }, {
-    files: ["**/*.astro/*.js", "*.astro/*.js"],
+    {
+      files: ["**/*.astro"],
 
-    languageOptions: {
-      parser: tsParser,
+      languageOptions: {
+        parser: astroParser,
+
+        parserOptions: {
+          parser: "@typescript-eslint/parser",
+          project: "tsconfig.json",
+          extraFileExtensions: [".astro"],
+        },
+      },
+
+      rules: {
+        "no-unused-vars": "warn",
+        "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+      },
     },
-  }
-]);
+    {
+      files: ["**/*.{js,ts}"],
+
+      languageOptions: {
+        parser: tsParser,
+      },
+
+      extends: [tseslint.configs.recommended],
+
+      rules: {
+        "@typescript-eslint/no-unused-vars": ["error", {
+          argsIgnorePattern: "^_",
+          destructuredArrayIgnorePattern: "^_",
+        }],
+
+        "@typescript-eslint/no-non-null-assertion": "off",
+      },
+    },
+
+    // Ignore patterns
+    {
+      ignores: ["**/.astro/", "dist/**", "**/*.d.ts", ".github/"],
+    },
+  ]
+);
