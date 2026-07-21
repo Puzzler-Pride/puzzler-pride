@@ -26,3 +26,5 @@ yarn-error.log*
 # package lock
 # GitHub Actions requires we check this in.
 #package-lock.json
+
+.astro/dev.json
